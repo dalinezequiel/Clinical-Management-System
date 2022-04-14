@@ -27,7 +27,7 @@ public class PacienteSQL {
 
     public void cadastroAll(Connection con, PreparedStatement pst, PacienteModel pm) {
         try {
-            String sql = "INSERT INTO paciente(IDPaciente, Nome, Apelido,Genero, Documento, NrDocumento) VALUES (?,?,?,?,?,?)"; //'?','?','?','?','?','?'
+            String sql = "INSERT INTO paciente(IDPaciente, Nome, Apelido,Genero, Documento, NrDocumento) VALUES (?,?,?,?,?,?)";
             con = ConexaoSQL.getConnection();
             pst = con.prepareStatement(sql);
             
@@ -38,18 +38,6 @@ public class PacienteSQL {
             pst.setString(5, pm.getIdentificao());
             pst.setString(6, pm.getNrDocumento());
             
-            //pst.setDate(5, pm.getDataNascimento());
-            /*pst.setString(7, pm.getNrDocumento());
-            pst.setString(8, pm.getNomePai());
-            pst.setString(9, pm.getNomeMae());
-            pst.setString(10, pm.getTelefone());
-            pst.setString(11, pm.getEmail());
-            pst.setString(12, pm.getProvincia());
-            pst.setString(13, pm.getCidade());
-            pst.setString(14, pm.getBairro());
-            pst.setString(15, pm.getRua());
-            pst.setString(16, pm.getEstado());*/
-          
             pst.execute();
             pst.close();
             
@@ -98,7 +86,7 @@ public class PacienteSQL {
             tb.addRow(row);
         }
     }
-    ///%%%%
+
     public static ArrayList<PacienteModel> pesquisaPacienteAll(int codigo, String nome) {
         lista = new ArrayList<PacienteModel>();
         try {
