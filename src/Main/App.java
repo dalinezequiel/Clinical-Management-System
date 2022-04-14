@@ -16,13 +16,9 @@ public class App
 {
     public static void main(String[] args) throws IOException
     {
-        //System.out.println(Data.getLocalDateTime());
-        //System.out.println(Data.getLocalDateTimeFormatted());
-        //new TemaView();
         try
         {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             new LoginView();
         }catch(Exception ex)
         {
