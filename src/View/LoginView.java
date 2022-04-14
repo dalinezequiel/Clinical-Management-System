@@ -108,7 +108,6 @@ public class LoginView extends JFrame {
         direito.setBounds(110, 400, 200, 30);
         direito.setForeground(Color.DARK_GRAY);
         direito.setEnabled(false);
-        //add(direito);
     }
 
     private void tela() {
