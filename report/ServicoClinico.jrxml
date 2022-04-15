@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ServicoClinico" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1552f997-0b1e-4c3f-b4e4-413f4d3d71af">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from servicoclinico
+order by ServicoClinico]]>
+	</queryString>
+	<field name="Codigo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ServicoClinico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Valor" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DataRegisto" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="somaTotal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{Valor}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="147" splitType="Stretch">
+			<staticText>
+				<reportElement x="63" y="18" width="166" height="30" uuid="61f3386b-94a2-4b64-b5c0-8c6de426ecf4"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLÍNICA DR. OMAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="88" width="529" height="29" uuid="3cdbe1aa-47c7-4820-a0eb-c9d150eeab65"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Serviços Clínicos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="12" y="12" width="79" height="57" uuid="fe83fcb9-278e-437b-8cb1-b8385b983434"/>
+				<imageExpression><![CDATA["D:\\TheMoon\\New folder\\consulta.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="340" y="30" width="201" height="20" uuid="f141f429-09f9-4d5e-bb68-24e847c0edc3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="hh:mm:ss a">
+				<reportElement x="340" y="51" width="201" height="20" uuid="40542570-9140-431c-8106-be7fa67f5861"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="63" y="48" width="122" height="20" uuid="a3661f91-060d-4308-bfd0-964fa5e854cd"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Suc. Maputo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="7" width="74" height="15" uuid="8489061c-54d4-449f-9adf-5e2a908a9e4c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="7" width="168" height="15" uuid="c837b040-11cf-4bc6-ac53-7fd578832230"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[SERVIÇO CLINICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="7" width="92" height="15" uuid="f1943bbe-7600-47e2-871f-4d39e73bd900"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="7" width="96" height="15" uuid="6be96803-837d-49e6-8768-d904dc0aae68"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[DATA DE REGISTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="7" width="56" height="15" uuid="6b337fee-6b2e-4ed3-889b-e5042e5c2376"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="25" width="529" height="1" uuid="ba785c2a-7352-4b8c-af45-fcadce422f61"/>
+			</line>
+			<rectangle>
+				<reportElement x="12" y="1" width="529" height="1" backcolor="#333333" uuid="6533c1dc-d899-498e-8ffe-955a73377902"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="4" width="74" height="20" uuid="9630ea76-fc99-40ea-ab09-fed2b3a96062"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="4" width="168" height="20" uuid="6e340d13-bef6-4dae-a57f-cb1d2eb0aa29"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ServicoClinico}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="265" y="4" width="92" height="20" uuid="46309dfb-e3d6-41ec-aa9b-63d8350b99ac"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Valor}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="445" y="4" width="96" height="20" uuid="37a8308e-5a2e-4f8a-ac28-625281991720"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DataRegisto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="4" width="56" height="20" uuid="18bb7a4e-60e4-4e4a-ab6b-8410f87388e3"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17" splitType="Stretch">
+			<textField pattern="#,##0.00">
+				<reportElement x="411" y="2" width="106" height="15" uuid="11fd8437-4344-48c0-ab19-4aff5872366d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{somaTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="2" width="399" height="15" forecolor="#000000" backcolor="#CCCCCC" uuid="e3ee12cc-a6c5-451d-8769-b3179b31b619"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="519" y="2" width="22" height="15" uuid="78be761f-f4fe-483f-8338-ba364afe6a4d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MZN]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="12" y="2" width="529" height="1" uuid="c8bfa3dd-eaf3-4ddb-ac0b-839c9c6a70a9"/>
+			</line>
+			<staticText>
+				<reportElement x="12" y="5" width="412" height="20" uuid="5a3162c8-251e-4cf8-9ac8-70ea1314ede4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Moçambique | Maputo | Alto Maé | Av. Eduardo Mondlane N° 1500 Km 2 | Clinica Dr. Omar | OctaSy]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="445" y="5" width="87" height="20" uuid="3e56cd10-fb09-4413-b904-555cc9a15fac"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="532" y="5" width="9" height="20" uuid="5589a2c3-3bf4-4f58-af8a-dd584126d2f8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
